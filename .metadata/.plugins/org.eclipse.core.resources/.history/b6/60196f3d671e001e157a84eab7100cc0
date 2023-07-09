@@ -1,5 +1,4 @@
 package entities;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -40,35 +39,18 @@ public class GamePainel extends JPanel implements ActionListener{
 	
 	GamePainel(){
 		random = new Random(); // Instanciando o random para o posicionamento aleatorio da maca
-		this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT)); // adicionando o tamanho para o GamePainel
-		this.setBackground(Color.black); // adicionando a cor preta ao background
-		this.setFocusable(true); // definindo a capacidade de foco
-		this.addKeyListener(new MyKeyAdapter()); // adicionando novo key adapter
-		startGame(); // chamando metodo para iniciar o jogo
+		this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
 	}
 	
 	public void startGame() {
-		// definicoes para o comeco do jogo
-		newApple();
-		running = true; 
-		Timer timer = new Timer(DELAY,this);
-		timer.start(); // iniciando o timer
+		
 	}
 	
-	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
-		draw(g);
+	public void pantiComponent(Graphics g) {
+		
 	}
 	
 	public void draw(Graphics g) {
-		// adicionando linhas verticais e horizontais a tela
-		for(int i=0;i<SCREEN_HEIGHT/UNIT_SIZE;i++) {
-			g.drawLine(i*UNIT_SIZE,0,i*UNIT_SIZE, SCREEN_HEIGHT);
-			g.drawLine(0,i*UNIT_SIZE,SCREEN_WIDTH,i*UNIT_SIZE);
-		}
-	}
-	
-	public void newApple() {
 		
 	}
 	
