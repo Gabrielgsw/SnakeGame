@@ -76,10 +76,6 @@ public class GamePainel extends JPanel implements ActionListener{
 				g.setColor(Color.green);
 				g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
 			}
-			else {
-				g.setColor(new Color(45,180,0)); // definindo uma cor pelo padrao RGB
-				g.fillRect(x[i], y[i], UNIT_SIZE,UNIT_SIZE);
-			}
 		}
 	}
 	
@@ -117,32 +113,7 @@ public class GamePainel extends JPanel implements ActionListener{
 	}
 	
 	public void checkCollisions() {
-		// checando se a cabeca colide com o corpo
-		for(int i=bodyParts;i>0;i--) {
-			if((x[0] == x[i]) && (y[0] == y[i])) {
-				running = false;
-			}
-		}
-		// checando se a cabeca toca na borda horizontal esquerda
-		if(x[0]<0) {
-			running = false;
-		}
-		// checando se a cabeca toca a borda da direita
-		if(x[0] > SCREEN_WIDTH) {
-			running = false;
-		}
-		// checando se a cabeca toca a borda superior
-		if(y[0] < 0) {
-			running = false;
-		}
-		// checando se a cabeca toca a borda inferior
-		if(y[0] > SCREEN_HEIGHT) {
-			running = false;
-		}
-		// condicao para o jogo parar
-		if(!running) {
-			timer.stop();
-		}
+		
 	}
 	
 	public void gameOver(Graphics g) {
@@ -152,13 +123,6 @@ public class GamePainel extends JPanel implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// fazendo o jogo comecar (cobra se mover)
-		if(running) {
-			move();
-			checkApple();
-			checkCollisions();
-		}
-		repaint();
 		
 	}
 	

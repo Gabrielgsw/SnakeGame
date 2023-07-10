@@ -135,14 +135,6 @@ public class GamePainel extends JPanel implements ActionListener{
 		if(y[0] < 0) {
 			running = false;
 		}
-		// checando se a cabeca toca a borda inferior
-		if(y[0] > SCREEN_HEIGHT) {
-			running = false;
-		}
-		// condicao para o jogo parar
-		if(!running) {
-			timer.stop();
-		}
 	}
 	
 	public void gameOver(Graphics g) {
