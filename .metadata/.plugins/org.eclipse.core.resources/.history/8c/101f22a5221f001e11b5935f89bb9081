@@ -89,8 +89,8 @@ public class GamePainel extends JPanel implements ActionListener{
 	
 	public void newApple() {
 		// Gerando uma maca aleatoria no eixo X e Y
-		appleX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
-		appleY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
+		appleX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE)*UNIT_SIZE);
+		appleY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE)*UNIT_SIZE);
 	}
 	
 	public void move() {

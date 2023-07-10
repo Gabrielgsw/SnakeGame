@@ -14,10 +14,6 @@ import javax.swing.Timer;
 public class GamePainel extends JPanel implements ActionListener{
 
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	// adicao da largura e altura da tela
 	static final int SCREEN_WIDTH =600;
 	static final int SCREEN_HEIGHT =600;
@@ -89,8 +85,8 @@ public class GamePainel extends JPanel implements ActionListener{
 	
 	public void newApple() {
 		// Gerando uma maca aleatoria no eixo X e Y
-		appleX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
-		appleY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
+		appleX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE)*UNIT_SIZE);
+		appleY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE)*UNIT_SIZE);
 	}
 	
 	public void move() {
@@ -117,12 +113,7 @@ public class GamePainel extends JPanel implements ActionListener{
 	}
 	
 	public void checkApple() {
-		// incrementando o tamanho da cobrinha e adicionando uma nova maca aleatoria
-		if((x[0] == appleX)  && (y[0] == appleY)) {
-			bodyParts++;
-			applesEaten++;
-			newApple();
-		}
+		
 	}
 	
 	public void checkCollisions() {
