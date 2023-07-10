@@ -2,4 +2,7 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="entities.GameFrame"/>
     <fullyQualifiedTypeName name="entities.GamePainel"/>
+    <fullyQualifiedTypeName name="java.awt.Dimension"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="entities.GamePainel.MyKeyAdapter"/>
 </qualifiedTypeNameHistroy>
