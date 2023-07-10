@@ -1,8 +1,6 @@
 package entities;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -68,35 +66,24 @@ public class GamePainel extends JPanel implements ActionListener{
 	
 	public void draw(Graphics g) {
 		// adicionando linhas verticais e horizontais a tela
-		if(running) {
-			for(int i=0;i<SCREEN_HEIGHT/UNIT_SIZE;i++) {
-				g.drawLine(i*UNIT_SIZE,0,i*UNIT_SIZE, SCREEN_HEIGHT);
-				g.drawLine(0,i*UNIT_SIZE,SCREEN_WIDTH,i*UNIT_SIZE);
-			}
-			// comandos para desenhar a maca
-			g.setColor(Color.red);
-			g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
+		for(int i=0;i<SCREEN_HEIGHT/UNIT_SIZE;i++) {
+			g.drawLine(i*UNIT_SIZE,0,i*UNIT_SIZE, SCREEN_HEIGHT);
+			g.drawLine(0,i*UNIT_SIZE,SCREEN_WIDTH,i*UNIT_SIZE);
+		}
+		// comandos para desenhar a maca
+		g.setColor(Color.red);
+		g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
 		
-			// fazendo a cobrinha
-			for(int i=0;i<bodyParts;i++) {
-				if(i == 0) {
-					g.setColor(Color.green);
-					g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
-				}
-				else {
-					g.setColor(new Color(45,180,0)); // definindo uma cor pelo padrao RGB
-					//g.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255))); para a cobrinha ficar colorida
-					g.fillRect(x[i], y[i], UNIT_SIZE,UNIT_SIZE);
-				}
-		  }
-			// fazendo o score
-			g.setColor(Color.red);
-			g.setFont( new Font("Ink Free",Font.BOLD, 40));
-			FontMetrics metrics = getFontMetrics(g.getFont());
-			g.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Score: "+applesEaten))/2, g.getFont().getSize());
-			
-		}else {
-			gameOver(g);
+		// fazendo a cobrinha
+		for(int i=0;i<bodyParts;i++) {
+			if(i == 0) {
+				g.setColor(Color.green);
+				g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+			}
+			else {
+				g.setColor(new Color(45,180,0)); // definindo uma cor pelo padrao RGB
+				g.fillRect(x[i], y[i], UNIT_SIZE,UNIT_SIZE);
+			}
 		}
 	}
 	
@@ -168,17 +155,7 @@ public class GamePainel extends JPanel implements ActionListener{
 	}
 	
 	public void gameOver(Graphics g) {
-		// exibindo o scoe apos o fim do game
-		g.setColor(Color.red);
-		g.setFont( new Font("Ink Free",Font.BOLD, 40));
-		FontMetrics metrics1 = getFontMetrics(g.getFont());
-		g.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metrics1.stringWidth("Score: "+applesEaten))/2, g.getFont().getSize());
 		
-		// texto do game over
-		g.setColor(Color.red);
-		g.setFont(new Font("Ink Free", Font.BOLD,75));
-		FontMetrics metrics2 = getFontMetrics(g.getFont());
-		g.drawString("Game Over",(SCREEN_WIDTH - metrics2.stringWidth("Game Over"))/2,SCREEN_HEIGHT/2);
 	}
 	
 	
